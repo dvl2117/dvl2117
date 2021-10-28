@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)file:///C:/Users/DHRUVA/Documents/GitHub/dvl2117/11_Lakshminarayanan_Dhruva.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>load data and filter by quality</title>
+        <script type="text/javascript" src="./index_files/d3.js.download"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			d3.csv("data/density_income_ny_counties.csv")//loading file "density_income_ny_counties.csv"
+			.then(function(data) {
+
+				d3.select("body").selectAll("p")
+					.data(data)
+					.enter()
+					.append("p") //paragraph for each item
+					.text(function(d) {
+							console.log(d)
+						return d.Geo_QName })
+						.style("color", function(d){
+							if( d.median_income > 65323){
+								return "red"
+							}else{
+								return "black"
+							}
+						});
+
+
+       //YOUR ASSIGNMENT STARTS HERE:
+	   //use what you have learned so far to load the file of density and income data in the data folder in this chapter
+      //file name is "density_income_ny_counties.csv"
+      //see 03 for loading
+
+
+      //make a paragraph for each county, and set the name of the county as its text
+      //if the median income of the county is above the median income of new york state, turn the county name red
+
+      //the median income for 2014 - 2018 period is $65,323
+      //the key for the name of the county is "Geo_NAME"
+      //the key for median income is "median_income"
+
+		})
+		.catch(function(error){
+				 // handle error
+		})
+
+
+		</script>
+	
+
+<p style="color: black;">Albany County, New York</p><p style="color: black;">Allegany County, New York</p><p style="color: black;">Bronx County, New York</p><p style="color: black;">Broome County, New York</p><p style="color: black;">Cattaraugus County, New York</p><p style="color: black;">Cayuga County, New York</p><p style="color: black;">Chautauqua County, New York</p><p style="color: black;">Chemung County, New York</p><p style="color: black;">Chenango County, New York</p><p style="color: black;">Clinton County, New York</p><p style="color: black;">Columbia County, New York</p><p style="color: black;">Cortland County, New York</p><p style="color: black;">Delaware County, New York</p><p style="color: red;">Dutchess County, New York</p><p style="color: black;">Erie County, New York</p><p style="color: black;">Essex County, New York</p><p style="color: black;">Franklin County, New York</p><p style="color: black;">Fulton County, New York</p><p style="color: black;">Genesee County, New York</p><p style="color: black;">Greene County, New York</p><p style="color: black;">Hamilton County, New York</p><p style="color: black;">Herkimer County, New York</p><p style="color: black;">Jefferson County, New York</p><p style="color: black;">Kings County, New York</p><p style="color: black;">Lewis County, New York</p><p style="color: black;">Livingston County, New York</p><p style="color: black;">Madison County, New York</p><p style="color: black;">Monroe County, New York</p><p style="color: black;">Montgomery County, New York</p><p style="color: red;">Nassau County, New York</p><p style="color: red;">New York County, New York</p><p style="color: black;">Niagara County, New York</p><p style="color: black;">Oneida County, New York</p><p style="color: black;">Onondaga County, New York</p><p style="color: black;">Ontario County, New York</p><p style="color: red;">Orange County, New York</p><p style="color: black;">Orleans County, New York</p><p style="color: black;">Oswego County, New York</p><p style="color: black;">Otsego County, New York</p><p style="color: red;">Putnam County, New York</p><p style="color: black;">Queens County, New York</p><p style="color: red;">Rensselaer County, New York</p><p style="color: red;">Richmond County, New York</p><p style="color: red;">Rockland County, New York</p><p style="color: black;">St. Lawrence County, New York</p><p style="color: red;">Saratoga County, New York</p><p style="color: black;">Schenectady County, New York</p><p style="color: black;">Schoharie County, New York</p><p style="color: black;">Schuyler County, New York</p><p style="color: black;">Seneca County, New York</p><p style="color: black;">Steuben County, New York</p><p style="color: red;">Suffolk County, New York</p><p style="color: black;">Sullivan County, New York</p><p style="color: black;">Tioga County, New York</p><p style="color: black;">Tompkins County, New York</p><p style="color: black;">Ulster County, New York</p><p style="color: black;">Warren County, New York</p><p style="color: black;">Washington County, New York</p><p style="color: black;">Wayne County, New York</p><p style="color: red;">Westchester County, New York</p><p style="color: black;">Wyoming County, New York</p><p style="color: black;">Yates County, New York</p></body></html>
